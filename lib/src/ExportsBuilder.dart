@@ -12,6 +12,8 @@ class ExportsBuilder implements Builder {
   Future<void> build(BuildStep buildStep) async {
     final exports = buildStep.findAssets(Glob('**/*.exports'));
     final content = [
+      "// GENERATED CODE - DO NOT MODIFY BY HAND",
+      "",
       await for (var exportLibrary in exports)
         "export '${exportLibrary.changeExtension('.dart').uri}';",
     ];
