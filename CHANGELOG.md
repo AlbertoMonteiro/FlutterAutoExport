@@ -1,3 +1,7 @@
+## [1.1.0] - 2020-07-25
+
+* Updated dependencies, now extensions are can be auto exported without fake class trick
+
 ## [1.0.2] - 2020-06-07
 
 * Added first line on auto_export file warning about that is generated code

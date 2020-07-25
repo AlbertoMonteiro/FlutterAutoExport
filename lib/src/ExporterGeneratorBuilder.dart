@@ -5,9 +5,7 @@ import 'package:source_gen/source_gen.dart';
 
 class ExporterGeneratorBuilder implements Builder {
   @override
-  final buildExtensions = const {
-    '.dart': ['.exports']
-  };
+  final buildExtensions = const { '.dart': ['.exports'] };
 
   @override
   Future<void> build(BuildStep buildStep) async {
