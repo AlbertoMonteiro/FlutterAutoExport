@@ -2,8 +2,10 @@ import 'dart:async';
 import 'package:glob/glob.dart';
 import 'package:build/build.dart';
 
+// ignore: public_member_api_docs
 class ExportsBuilder implements Builder {
   @override
+  // ignore: type_annotate_public_apis
   final buildExtensions = const {
     r'$lib$': ['auto_export.dart']
   };
@@ -18,7 +20,7 @@ class ExportsBuilder implements Builder {
         "export '${exportLibrary.changeExtension('.dart').uri}';",
     ];
     if (content.isNotEmpty) {
-      buildStep.writeAsString(
+      await buildStep.writeAsString(
           AssetId(buildStep.inputId.package, 'lib/auto_export.dart'),
           content.join('\n'));
     }
